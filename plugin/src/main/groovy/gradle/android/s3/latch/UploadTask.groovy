@@ -1,4 +1,4 @@
-package gradle.android.s3.latch
+package com.latch.android.gradle
 
 import com.amazonaws.AmazonClientException
 import com.amazonaws.AmazonServiceException

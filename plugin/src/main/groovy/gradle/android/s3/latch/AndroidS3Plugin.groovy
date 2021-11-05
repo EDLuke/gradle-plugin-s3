@@ -1,4 +1,4 @@
-package gradle.android.s3.latch
+package com.latch.android.gradle
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -10,12 +10,7 @@ class AndroidS3Extension {
 
 class AndroidS3Plugin implements Plugin<Project> {
     void apply(Project target) {
-        // target.extensions.create("s3", AndroidS3Extension)
-        // target.tasks.create('uploadApk', UploadTask)
-        project.task('hello') {
-            doLast {
-                println 'Hello from the GreetingPlugin'
-            }
-        }
+        target.extensions.create("s3", AndroidS3Extension)
+        target.tasks.create('uploadApk', UploadTask)
     }
 }

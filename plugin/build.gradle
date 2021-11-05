@@ -31,18 +31,29 @@ dependencies {
     implementation 'com.amazonaws:aws-java-sdk-s3:1.12.101'
 }
 
+// tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+//   kotlinOptions {
+//     jvmTarget = "1.8"
+//   }
+// }
+
+tasks.withType(JavaCompile).configureEach {
+  sourceCompatibility = JavaVersion.VERSION_1_8
+  targetCompatibility = JavaVersion.VERSION_1_8
+}
+
 // https://docs.gradle.org/current/userguide/publishing_gradle_plugins.html
-group = 'gradle.android.s3.latch' 
-version = '1.0'  
+group = 'com.latch.android.gradle' 
+version = '1.1'  
 
 gradlePlugin {
     // Define the plugin
     plugins {
-        greeting {
-            id = 'gradle.android.s3.latch'
+        androidS3Plugin {
+            id = 'com.latch.android.gradle'
             displayName = 'Android S3 Uploader'
             description = 'A simple light weight Gradle plugin for Android project to upload apk of all the build variants to AWS S3. This helps you to maintain all flavour of every version easily in S3. For usage, please visit docs for usage.' 
-            implementationClass = 'gradle.android.s3.latch.AndroidS3Plugin'
+            implementationClass = 'com.latch.android.gradle.AndroidS3Plugin'
         }
     }
 }
