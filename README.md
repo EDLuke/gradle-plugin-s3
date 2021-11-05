@@ -24,11 +24,11 @@ Add the following to the module's `build.gradle` below `android` block
 ```
 apply plugin: "com.rambabusaravanan.android-s3"
 s3 {
-    accessKey = 'AKIA****************'
-    secretKey = 'TPSi************************************'
+    accessKey  = 'AKIA****************'
+    secretKey  = 'TPSi************************************'
     bucketName = "apkbuilder"
-    keyPrefix = "path/to/key"                 // (Optional) Default: "com.packagename/versionname"
-    uploadPath = "app/build/outputs/apk"    // (Optional) Default: "$target.buildDir/outputs/apk"
+    keyPrefix  = "path/to/key"                // (Optional) Default: "com.packagename/versionname"
+    uploadPath = "app/build/outputs/apk"      // (Optional) Default: "$target.buildDir/outputs/apk"
 }
 // (Optional but recommended)
 uploadApk {
