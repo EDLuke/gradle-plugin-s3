@@ -14,7 +14,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.gradle.android.s3.latch:1.0"
+    classpath 'com.latch.android.gradle:plugin:1.1'
   }
 }
 ```
@@ -22,7 +22,7 @@ buildscript {
 Add the following to the module's `build.gradle` below `android` block
 
 ```
-apply plugin: "com.rambabusaravanan.android-s3"
+apply plugin: "com.latch.android.gradle"
 s3 {
     accessKey  = 'AKIA****************'
     secretKey  = 'TPSi************************************'
